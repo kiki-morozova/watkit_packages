@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAssembly Memory Functions Benchmark</title>
+    <link rel="stylesheet" href="benchmark.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="benchmark-header">
+            <h1 class="benchmark-title">WebAssembly Memory Functions Benchmark</h1>
+            <p class="benchmark-subtitle">Comparing SIMD-optimized WebAssembly functions with JavaScript equivalents</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="dataSize">Data Size (bytes):</label>
+                <input type="number" id="dataSize" value="4096" min="1000" max="10000000" step="1000">
+            </div>
+            <div class="control-group">
+                <label for="iterations">Iterations:</label>
+                <input type="number" id="iterations" value="1000" min="10" max="1000" step="10">
+            </div>
+            <div class="control-group">
+                <label for="warmupRuns">Warmup Runs:</label>
+                <input type="number" id="warmupRuns" value="500" min="0" max="1000" step="5">
+            </div>
+            <div class="control-group">
+                <button id="runBenchmark" class="btn">Run Benchmark</button>
+            </div>
+        </div>
+
+        <div class="progress-container" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="progress-text">Preparing benchmark...</div>
+        </div>
+
+        <div class="results" id="results">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+
+        <div class="charts-container" id="charts" style="display: none;">
+            <div class="chart-card">
+                <h3 class="chart-title">Performance Comparison (ms)</h3>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Speedup Factor</h3>
+                <div class="chart-container">
+                    <canvas id="speedupChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="benchmark.js"></script>
+</body>
+</html>

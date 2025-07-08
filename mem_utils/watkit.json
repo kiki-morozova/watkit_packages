@@ -1,0 +1,9 @@
+{
+  "name": "memutils",
+  "version": "0.1.1",
+  "main": "src/main.wat",
+  "output": "dist/main.wasm",
+  "description": "a module for memory manipulation with simd, currently implements xor and reverse.",
+  "author": "kiki-morozova",
+  "license": "MIT"
+}
